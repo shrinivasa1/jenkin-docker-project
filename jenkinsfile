@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                git https://github.com/shrinivasa1/jenkin-docker-project.git
+            }
+        }
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Runnung Test....'
+            }
+        }
+    }
+}
